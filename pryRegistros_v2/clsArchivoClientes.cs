@@ -30,7 +30,36 @@ namespace pryRegistros_v2
             AD.Close(); 
             AD.Dispose();
         }
-        
+
+        public void Listar(DataGridView Grilla)
+        {
+            string DatosLeidos;
+            string[] VectorDatos = new string[4];
+
+            //ab
+            StreamReader AD = new StreamReader(NombreArchivo);
+
+            //leer
+            DatosLeidos = AD.ReadLine();
+
+            Grilla.Rows.Clear();
+            while (DatosLeidos != null)
+            {
+                VectorDatos = DatosLeidos.Split(';');
+
+                Grilla.Rows.Add(VectorDatos[0], VectorDatos[1], VectorDatos[2], VectorDatos[3]); 
+                DatosLeidos = AD.ReadLine();
+            }
+
+            //cerr
+            AD.Close();
+            AD.Dispose();
+
+
+
+
+        }
+
 
     }
 }

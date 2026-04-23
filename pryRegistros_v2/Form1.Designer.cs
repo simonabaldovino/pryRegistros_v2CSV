@@ -97,6 +97,7 @@
             this.listadoDeTodosLosClientesToolStripMenuItem.Name = "listadoDeTodosLosClientesToolStripMenuItem";
             this.listadoDeTodosLosClientesToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.listadoDeTodosLosClientesToolStripMenuItem.Text = "Listado de todos los clientes ";
+            this.listadoDeTodosLosClientesToolStripMenuItem.Click += new System.EventHandler(this.listadoDeTodosLosClientesToolStripMenuItem_Click);
             // 
             // listadoDeClienetsDeudoresToolStripMenuItem
             // 
@@ -124,7 +125,9 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestor declientes (con archivo CSV)";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
