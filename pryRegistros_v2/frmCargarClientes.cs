@@ -17,11 +17,12 @@ namespace pryRegistros_v2
             InitializeComponent();
         }
 
-        private void lblDeuda_Click(object sender, EventArgs e)
+        clsArchivoClientes x = new clsArchivoClientes();
+
+        private void btnCargar_Click(object sender, EventArgs e)
         {
-
+            x.Grabar(txtCodigo.Text, txtNombreApellido.Text, txtDeuda.Text, txtLimiteCredito.Text);
+            MessageBox.Show("Cliente cargado correctamente");
         }
-
-        
     }
 }

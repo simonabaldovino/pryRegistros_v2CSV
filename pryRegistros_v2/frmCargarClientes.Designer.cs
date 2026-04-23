@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.gprCargaClientes = new System.Windows.Forms.GroupBox();
-            this.btnCagar = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnCargar = new System.Windows.Forms.Button();
+            this.txtDeuda = new System.Windows.Forms.TextBox();
+            this.txtNombreApellido = new System.Windows.Forms.TextBox();
+            this.txtLimiteCredito = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblLimiteCredito = new System.Windows.Forms.Label();
             this.lblDeuda = new System.Windows.Forms.Label();
             this.lblNombreApellido = new System.Windows.Forms.Label();
@@ -43,11 +43,11 @@
             // 
             // gprCargaClientes
             // 
-            this.gprCargaClientes.Controls.Add(this.btnCagar);
-            this.gprCargaClientes.Controls.Add(this.textBox4);
-            this.gprCargaClientes.Controls.Add(this.textBox3);
-            this.gprCargaClientes.Controls.Add(this.textBox2);
-            this.gprCargaClientes.Controls.Add(this.textBox1);
+            this.gprCargaClientes.Controls.Add(this.btnCargar);
+            this.gprCargaClientes.Controls.Add(this.txtDeuda);
+            this.gprCargaClientes.Controls.Add(this.txtNombreApellido);
+            this.gprCargaClientes.Controls.Add(this.txtLimiteCredito);
+            this.gprCargaClientes.Controls.Add(this.txtCodigo);
             this.gprCargaClientes.Controls.Add(this.lblLimiteCredito);
             this.gprCargaClientes.Controls.Add(this.lblDeuda);
             this.gprCargaClientes.Controls.Add(this.lblNombreApellido);
@@ -59,42 +59,43 @@
             this.gprCargaClientes.TabStop = false;
             this.gprCargaClientes.Text = "Carca de datos";
             // 
-            // btnCagar
+            // btnCargar
             // 
-            this.btnCagar.Location = new System.Drawing.Point(441, 156);
-            this.btnCagar.Name = "btnCagar";
-            this.btnCagar.Size = new System.Drawing.Size(86, 23);
-            this.btnCagar.TabIndex = 8;
-            this.btnCagar.Text = "Cargar";
-            this.btnCagar.UseVisualStyleBackColor = true;
+            this.btnCargar.Location = new System.Drawing.Point(441, 156);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(86, 23);
+            this.btnCargar.TabIndex = 8;
+            this.btnCargar.Text = "Cargar";
+            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
-            // textBox4
+            // txtDeuda
             // 
-            this.textBox4.Location = new System.Drawing.Point(113, 110);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(140, 20);
-            this.textBox4.TabIndex = 7;
+            this.txtDeuda.Location = new System.Drawing.Point(113, 110);
+            this.txtDeuda.Name = "txtDeuda";
+            this.txtDeuda.Size = new System.Drawing.Size(140, 20);
+            this.txtDeuda.TabIndex = 7;
             // 
-            // textBox3
+            // txtNombreApellido
             // 
-            this.textBox3.Location = new System.Drawing.Point(387, 47);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(140, 20);
-            this.textBox3.TabIndex = 6;
+            this.txtNombreApellido.Location = new System.Drawing.Point(387, 47);
+            this.txtNombreApellido.Name = "txtNombreApellido";
+            this.txtNombreApellido.Size = new System.Drawing.Size(140, 20);
+            this.txtNombreApellido.TabIndex = 6;
             // 
-            // textBox2
+            // txtLimiteCredito
             // 
-            this.textBox2.Location = new System.Drawing.Point(387, 110);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtLimiteCredito.Location = new System.Drawing.Point(387, 110);
+            this.txtLimiteCredito.Name = "txtLimiteCredito";
+            this.txtLimiteCredito.Size = new System.Drawing.Size(140, 20);
+            this.txtLimiteCredito.TabIndex = 5;
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(113, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtCodigo.Location = new System.Drawing.Point(113, 44);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(140, 20);
+            this.txtCodigo.TabIndex = 4;
             // 
             // lblLimiteCredito
             // 
@@ -113,7 +114,6 @@
             this.lblDeuda.Size = new System.Drawing.Size(39, 13);
             this.lblDeuda.TabIndex = 2;
             this.lblDeuda.Text = "Deuda";
-            this.lblDeuda.Click += new System.EventHandler(this.lblDeuda_Click);
             // 
             // lblNombreApellido
             // 
@@ -156,10 +156,10 @@
         private System.Windows.Forms.Label lblDeuda;
         private System.Windows.Forms.Label lblNombreApellido;
         private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnCagar;
+        private System.Windows.Forms.TextBox txtDeuda;
+        private System.Windows.Forms.TextBox txtNombreApellido;
+        private System.Windows.Forms.TextBox txtLimiteCredito;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Button btnCargar;
     }
 }
