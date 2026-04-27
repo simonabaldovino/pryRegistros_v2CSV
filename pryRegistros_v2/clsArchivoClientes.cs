@@ -54,12 +54,32 @@ namespace pryRegistros_v2
             //cerr
             AD.Close();
             AD.Dispose();
-
-
-
-
         }
 
+        public Int32 CantidadClientes()
+        {
+            string DatosLeidos;
+            Int32 C = 0;
+
+            //abrir
+            StreamReader AD = new StreamReader(NombreArchivo);
+
+            //leer
+            DatosLeidos = AD.ReadLine();
+
+            while (DatosLeidos != null)
+            {
+                C++;
+
+                DatosLeidos = AD.ReadLine();
+            }
+
+            //cerrar
+            AD.Close();
+            AD.Dispose();
+
+            return C;        
+        }
 
     }
 }

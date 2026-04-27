@@ -21,6 +21,8 @@ namespace pryRegistros_v2
         private void frmListadoClientes_Load(object sender, EventArgs e)
         {
             x.Listar(dgvConsultaDatos);
+            lblCantClientes.Text = x.CantidadClientes().ToString();
+
         }
     }
 }
