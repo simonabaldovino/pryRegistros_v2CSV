@@ -5,12 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using System.Xml.Schema;
 
 namespace pryRegistros_v2
 {
     internal class clsArchivoClientes
     {
         public string NombreArchivo = "Clientes.csv";
+        Decimal Total = 0;
+        Int32 C = 0;
 
         public void Grabar(string cod, string nom, string deu, string lim)
         {
@@ -59,7 +62,7 @@ namespace pryRegistros_v2
         public Int32 CantidadClientes()
         {
             string DatosLeidos;
-            Int32 C = 0;
+
 
             //abrir
             StreamReader AD = new StreamReader(NombreArchivo);
@@ -81,5 +84,65 @@ namespace pryRegistros_v2
             return C;        
         }
 
+        public Decimal DeudaClientes()
+        {
+            string[] VectorDatos = new string[4];
+            string DatosLeidos;
+
+            //abrir
+            StreamReader AD = new StreamReader(NombreArchivo);
+
+            //leer
+            DatosLeidos = AD.ReadLine();
+
+            while (DatosLeidos != null)
+            {
+                VectorDatos = DatosLeidos.Split(';');
+                Total = Total + Convert.ToDecimal(VectorDatos[2]);
+                DatosLeidos = AD.ReadLine();
+            }
+
+            //cerrar
+            AD.Close();
+            AD.Dispose();
+
+            return Total;
+        }
+       
+        public Decimal PromedioDeuda()
+        {
+            string[] VectorDatos = new string[4];
+            string DatosLeidos;
+           
+
+            //abrir
+            StreamReader AD = new StreamReader(NombreArchivo);
+
+            //leer
+            DatosLeidos = AD.ReadLine();
+
+            while (DatosLeidos != null)
+            {
+                C++;
+                VectorDatos = DatosLeidos.Split(';');
+                Total = Total + Convert.ToDecimal(VectorDatos[2]);
+                DatosLeidos = AD.ReadLine();
+            }
+
+            //cerrar
+            AD.Close();
+            AD.Dispose();
+
+            return Total / C;
+        }
+       
+
+        public Decimal PromedioDeuda2()
+        {
+            Decimal Promedio = 0;
+            Promedio = Total / C;
+
+            return Promedio;
+        }
     }
 }

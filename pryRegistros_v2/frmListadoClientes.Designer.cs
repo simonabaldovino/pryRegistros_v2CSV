@@ -63,7 +63,7 @@
             // lblCantClientes
             // 
             this.lblCantClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblCantClientes.Location = new System.Drawing.Point(327, 302);
+            this.lblCantClientes.Location = new System.Drawing.Point(370, 303);
             this.lblCantClientes.MaximumSize = new System.Drawing.Size(50, 50);
             this.lblCantClientes.Name = "lblCantClientes";
             this.lblCantClientes.Size = new System.Drawing.Size(50, 20);
@@ -72,7 +72,7 @@
             // lblPromDeuda
             // 
             this.lblPromDeuda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblPromDeuda.Location = new System.Drawing.Point(327, 336);
+            this.lblPromDeuda.Location = new System.Drawing.Point(370, 337);
             this.lblPromDeuda.MaximumSize = new System.Drawing.Size(50, 50);
             this.lblPromDeuda.Name = "lblPromDeuda";
             this.lblPromDeuda.Size = new System.Drawing.Size(50, 20);
@@ -81,7 +81,7 @@
             // lblTotDeuda
             // 
             this.lblTotDeuda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblTotDeuda.Location = new System.Drawing.Point(327, 267);
+            this.lblTotDeuda.Location = new System.Drawing.Point(370, 268);
             this.lblTotDeuda.MaximumSize = new System.Drawing.Size(50, 50);
             this.lblTotDeuda.Name = "lblTotDeuda";
             this.lblTotDeuda.Size = new System.Drawing.Size(50, 20);
@@ -90,7 +90,7 @@
             // lblCantiodadClientes
             // 
             this.lblCantiodadClientes.AutoSize = true;
-            this.lblCantiodadClientes.Location = new System.Drawing.Point(198, 302);
+            this.lblCantiodadClientes.Location = new System.Drawing.Point(241, 303);
             this.lblCantiodadClientes.Name = "lblCantiodadClientes";
             this.lblCantiodadClientes.Size = new System.Drawing.Size(106, 13);
             this.lblCantiodadClientes.TabIndex = 3;
@@ -99,7 +99,7 @@
             // lblPromedioDeuda
             // 
             this.lblPromedioDeuda.AutoSize = true;
-            this.lblPromedioDeuda.Location = new System.Drawing.Point(198, 337);
+            this.lblPromedioDeuda.Location = new System.Drawing.Point(241, 338);
             this.lblPromedioDeuda.Name = "lblPromedioDeuda";
             this.lblPromedioDeuda.Size = new System.Drawing.Size(102, 13);
             this.lblPromedioDeuda.TabIndex = 2;
@@ -108,7 +108,7 @@
             // lblTotalDeuda
             // 
             this.lblTotalDeuda.AutoSize = true;
-            this.lblTotalDeuda.Location = new System.Drawing.Point(198, 268);
+            this.lblTotalDeuda.Location = new System.Drawing.Point(241, 269);
             this.lblTotalDeuda.Name = "lblTotalDeuda";
             this.lblTotalDeuda.Size = new System.Drawing.Size(67, 13);
             this.lblTotalDeuda.TabIndex = 1;

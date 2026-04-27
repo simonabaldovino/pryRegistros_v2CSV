@@ -22,7 +22,10 @@ namespace pryRegistros_v2
         {
             x.Listar(dgvConsultaDatos);
             lblCantClientes.Text = x.CantidadClientes().ToString();
-
+            lblTotDeuda.Text = x.DeudaClientes().ToString();
+            lblPromDeuda.Text = x.PromedioDeuda().ToString();
         }
+
+        
     }
 }
