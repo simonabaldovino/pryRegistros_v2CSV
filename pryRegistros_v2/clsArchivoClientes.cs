@@ -194,6 +194,8 @@ namespace pryRegistros_v2
 
         public Int32 CantidadClientes2(DataGridView Grilla)
         {
+            C = 0;
+
             string[] VectorDatos = new string[4];
             string DatosLeidos;
 
@@ -209,12 +211,13 @@ namespace pryRegistros_v2
             {                
                 VectorDatos = DatosLeidos.Split(';');
 
-                if (Convert.ToInt32(VectorDatos[3]) > 0)
+                if (Convert.ToInt32(VectorDatos[2]) > 0)
                 {
                     Grilla.Rows.Add(VectorDatos[0], VectorDatos[1], VectorDatos[2], VectorDatos[3]);
+                    C++;
+
                 }
                 
-                C++;
                 DatosLeidos = AD.ReadLine();
             }
             

@@ -22,12 +22,9 @@ namespace pryRegistros_v2
         private void frmClientesDeudores_Load(object sender, EventArgs e)
         {
             x.Listar(dgvConsultaDatos);
-           // lblCantClientes2.Text = x.CantidadClientes2().ToString();
+            lblCantClientes2.Text = x.CantidadClientes2(dgvConsultaDatos).ToString();
             lblTotDeuda.Text = x.DeudaClientes2().ToString();
             lblPromDeuda.Text = x.PromedioDeuda2().ToString();
-
-
-
         }
     }
 }
