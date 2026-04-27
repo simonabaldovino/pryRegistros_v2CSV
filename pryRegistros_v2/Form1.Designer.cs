@@ -104,6 +104,7 @@
             this.listadoDeClienetsDeudoresToolStripMenuItem.Name = "listadoDeClienetsDeudoresToolStripMenuItem";
             this.listadoDeClienetsDeudoresToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.listadoDeClienetsDeudoresToolStripMenuItem.Text = "Listado de clientes deudores ";
+            this.listadoDeClienetsDeudoresToolStripMenuItem.Click += new System.EventHandler(this.listadoDeClienetsDeudoresToolStripMenuItem_Click);
             // 
             // listadoDeClientesOrdenadosPorToolStripMenuItem
             // 

@@ -1,6 +1,6 @@
 ﻿namespace pryRegistros_v2
 {
-    partial class frmListadoClientes
+    partial class frmClientesDeudores
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblCantClientes = new System.Windows.Forms.Label();
+            this.lblCantClientes2 = new System.Windows.Forms.Label();
             this.lblPromDeuda = new System.Windows.Forms.Label();
             this.lblTotDeuda = new System.Windows.Forms.Label();
             this.lblCantiodadClientes = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblCantClientes);
+            this.groupBox1.Controls.Add(this.lblCantClientes2);
             this.groupBox1.Controls.Add(this.lblPromDeuda);
             this.groupBox1.Controls.Add(this.lblTotDeuda);
             this.groupBox1.Controls.Add(this.lblCantiodadClientes);
@@ -56,18 +56,18 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(438, 391);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Consulta de datos";
             // 
-            // lblCantClientes
+            // lblCantClientes2
             // 
-            this.lblCantClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblCantClientes.Location = new System.Drawing.Point(370, 303);
-            this.lblCantClientes.MaximumSize = new System.Drawing.Size(50, 50);
-            this.lblCantClientes.Name = "lblCantClientes";
-            this.lblCantClientes.Size = new System.Drawing.Size(50, 20);
-            this.lblCantClientes.TabIndex = 6;
+            this.lblCantClientes2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblCantClientes2.Location = new System.Drawing.Point(370, 303);
+            this.lblCantClientes2.MaximumSize = new System.Drawing.Size(50, 50);
+            this.lblCantClientes2.Name = "lblCantClientes2";
+            this.lblCantClientes2.Size = new System.Drawing.Size(50, 20);
+            this.lblCantClientes2.TabIndex = 6;
             // 
             // lblPromDeuda
             // 
@@ -148,15 +148,15 @@
             this.Column4.HeaderText = "Deuda";
             this.Column4.Name = "Column4";
             // 
-            // frmListadoClientes
+            // frmClientesDeudores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(465, 424);
             this.Controls.Add(this.groupBox1);
-            this.Name = "frmListadoClientes";
-            this.Text = "Listado de Clientes";
-            this.Load += new System.EventHandler(this.frmListadoClientes_Load);
+            this.Name = "frmClientesDeudores";
+            this.Text = "frmClientesDeudores";
+            this.Load += new System.EventHandler(this.frmClientesDeudores_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaDatos)).EndInit();
@@ -167,16 +167,16 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvConsultaDatos;
+        private System.Windows.Forms.Label lblCantClientes2;
+        private System.Windows.Forms.Label lblPromDeuda;
         private System.Windows.Forms.Label lblTotDeuda;
         private System.Windows.Forms.Label lblCantiodadClientes;
         private System.Windows.Forms.Label lblPromedioDeuda;
         private System.Windows.Forms.Label lblTotalDeuda;
+        private System.Windows.Forms.DataGridView dgvConsultaDatos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.Label lblCantClientes;
-        private System.Windows.Forms.Label lblPromDeuda;
     }
 }

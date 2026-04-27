@@ -31,5 +31,12 @@ namespace pryRegistros_v2
             formulario.MdiParent = this;
             formulario.Show();
         }
+
+        private void listadoDeClienetsDeudoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmClientesDeudores();
+            formulario.MdiParent = this;
+            formulario.Show();
+        }
     }
 }
