@@ -167,6 +167,9 @@ namespace pryRegistros_v2
             AD.Dispose();
         }
 
+
+        // frm clientes deudores
+
         public Decimal DeudaClientes2()
         {
             string[] VectorDatos = new string[4];
@@ -236,8 +239,51 @@ namespace pryRegistros_v2
             return Promedio;
         }
 
+        public void GenerarReporte()
+        {
+            string DatosLeidos;
+            string[] VectorDatos = new string[4];
+
+            StreamWriter Reporte = new StreamWriter("Reporte.CSV", false);
+
+            Reporte.WriteLine("Listado de clientes");
+            Reporte.WriteLine("");
+            Reporte.WriteLine("Codigo;Nombre;Limite;Deuda");  
 
 
+
+
+            //ab
+            StreamReader AD = new StreamReader(NombreArchivo);
+
+            //leer
+            DatosLeidos = AD.ReadLine();
+
+            while (DatosLeidos != null)
+            {
+                VectorDatos = DatosLeidos.Split(';');
+
+                Reporte.Write(VectorDatos[0]);
+                Reporte.Write(";");
+                Reporte.Write(VectorDatos[1]);
+                Reporte.Write(";");
+                Reporte.Write(VectorDatos[2]);
+                Reporte.Write(";");
+                Reporte.WriteLine(VectorDatos[3]);
+
+
+
+
+                DatosLeidos = AD.ReadLine();
+            }
+
+            //cerr
+            AD.Close();
+            AD.Dispose();
+
+            Reporte.Close();
+            Reporte.Dispose();
+        }
 
 
     }

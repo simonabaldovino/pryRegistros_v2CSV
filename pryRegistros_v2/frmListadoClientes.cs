@@ -26,6 +26,10 @@ namespace pryRegistros_v2
             lblPromDeuda.Text = x.PromedioDeuda().ToString();
         }
 
-        
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            x.GenerarReporte();
+            MessageBox.Show("Reporte generado correctamente.");
+        }
     }
 }
