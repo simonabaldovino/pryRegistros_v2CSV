@@ -244,13 +244,15 @@ namespace pryRegistros_v2
             string DatosLeidos;
             string[] VectorDatos = new string[4];
 
-            StreamWriter Reporte = new StreamWriter("Reporte.CSV", false);
+            Int32 cantidad = 0;
+            Decimal total = 0;
+
+
+            StreamWriter Reporte = new StreamWriter("Reporte.CSV", false, Encoding.UTF8);
 
             Reporte.WriteLine("Listado de clientes");
             Reporte.WriteLine("");
-            Reporte.WriteLine("Codigo;Nombre;Limite;Deuda");  
-
-
+            Reporte.WriteLine("Código;Nombre;Límite;Deuda");  
 
 
             //ab
@@ -267,23 +269,33 @@ namespace pryRegistros_v2
                 Reporte.Write(";");
                 Reporte.Write(VectorDatos[1]);
                 Reporte.Write(";");
-                Reporte.Write(VectorDatos[2]);
+                Reporte.Write(VectorDatos[3]);
                 Reporte.Write(";");
-                Reporte.WriteLine(VectorDatos[3]);
-
-
-
+                Reporte.WriteLine(VectorDatos[2]);
 
                 DatosLeidos = AD.ReadLine();
+                cantidad++;
+                total = total + Convert.ToDecimal(VectorDatos[2]); //acum
             }
 
             //cerr
             AD.Close();
             AD.Dispose();
+            Reporte.WriteLine();
+            Reporte.Write("Total de deudas:;;");
+            Reporte.WriteLine(total);
+            Reporte.Write("Cantidad de clientes:;;");
+            Reporte.WriteLine(cantidad);
+            Reporte.Write("Promedio de deuda:;;");
+            Reporte.WriteLine(total / cantidad);
+
 
             Reporte.Close();
             Reporte.Dispose();
         }
+
+
+
 
 
     }
