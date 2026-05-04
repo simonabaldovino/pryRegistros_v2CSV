@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 using System.Windows.Forms;
 using System.Xml.Schema;
 
@@ -46,7 +47,7 @@ namespace pryRegistros_v2
                 VecClientes[IND].Codigo = Convert.ToInt32(VectorDatos[0]);
                 VecClientes[IND].Nombre = VectorDatos[1];
                 VecClientes[IND].Deuda = Convert.ToDecimal(VectorDatos[2]);
-                VecClientes[IND].Deuda = Convert.ToDecimal(VectorDatos[3]);
+                VecClientes[IND].Limite = Convert.ToDecimal(VectorDatos[3]);
                 IND++;
 
                 DatosLeidos = AD.ReadLine();
@@ -59,13 +60,39 @@ namespace pryRegistros_v2
         }
 
         private void OrdenarVector()
-        {   
+        {
+            RegClientes aux;
 
+            for (Int32 c = 0; c < IND - 1; c++) //contador de vueltas 
+            {
+                for (Int32 i = 0; i < IND - 1; i++) //recorre el vector
+                {
+                    if (VecClientes[i].Codigo > VecClientes[i + 1].Codigo)
+                    {
+                        aux = VecClientes[i];
+                        VecClientes[i] = VecClientes[i + 1];
+                        VecClientes[i + 1] = aux;
+                    }
+                }
+            }
         }
 
         private void ReescribirArchivo()
         {
-            
+            StreamWriter AD = new StreamWriter(NombreArchivo, false);
+
+            for (Int32 i = 0; i < IND; i++)
+            { 
+                AD.Write(VecClientes[i].Codigo);
+                AD.Write(";");
+                AD.Write(VecClientes[i].Nombre);
+                AD.Write(";");
+                AD.Write(VecClientes[i].Deuda);
+                AD.Write(";");
+                AD.WriteLine(VecClientes[i].Limite);
+            }
+            AD.Close();
+            AD.Dispose();
         }
 
         public void OrdenarArchivos()
