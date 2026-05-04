@@ -31,5 +31,12 @@ namespace pryRegistros_v2
             x.GenerarReporte();
             MessageBox.Show("Reporte generado correctamente.");
         }
+
+        private void btnOrdenar_Click(object sender, EventArgs e)
+        {
+            x.OrdenarArchivos();
+            MessageBox.Show("Se ordenó el archivo");
+            x.Listar(dgvConsultaDatos);
+        }
     }
 }

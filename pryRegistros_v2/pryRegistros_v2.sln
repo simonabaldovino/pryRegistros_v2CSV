@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.1.11312.151 d18.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pryRegistros_v2", "pryRegistros_v2.csproj", "{BDE7841D-F667-43BD-B4BD-D925AD5811EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDE7841D-F667-43BD-B4BD-D925AD5811EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDE7841D-F667-43BD-B4BD-D925AD5811EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDE7841D-F667-43BD-B4BD-D925AD5811EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDE7841D-F667-43BD-B4BD-D925AD5811EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6CA18C0-316F-4F6F-ABAE-14D304DDFA41}
+	EndGlobalSection
+EndGlobal

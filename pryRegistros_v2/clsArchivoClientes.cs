@@ -15,6 +15,67 @@ namespace pryRegistros_v2
         Decimal Total = 0;
         Int32 C = 0;
 
+        private struct RegClientes
+        {
+            public Int32 Codigo;
+            public String Nombre;
+            public Decimal Deuda;
+            public Decimal Limite;
+        }
+
+        private RegClientes[] VecClientes = new RegClientes[1500];
+        private Int32 IND = 0;
+
+        private void CargarVector()
+        {
+
+            string DatosLeidos;
+            string[] VectorDatos = new string[4];
+            IND = 0;
+
+            //ab
+            StreamReader AD = new StreamReader(NombreArchivo);
+
+            //leer
+            DatosLeidos = AD.ReadLine();
+
+            while (DatosLeidos != null)
+            {
+                VectorDatos = DatosLeidos.Split(';');
+
+                VecClientes[IND].Codigo = Convert.ToInt32(VectorDatos[0]);
+                VecClientes[IND].Nombre = VectorDatos[1];
+                VecClientes[IND].Deuda = Convert.ToDecimal(VectorDatos[2]);
+                VecClientes[IND].Deuda = Convert.ToDecimal(VectorDatos[3]);
+                IND++;
+
+                DatosLeidos = AD.ReadLine();
+            }
+
+            //cerr
+            AD.Close();
+            AD.Dispose();
+
+        }
+
+        private void OrdenarVector()
+        {   
+
+        }
+
+        private void ReescribirArchivo()
+        {
+            
+        }
+
+        public void OrdenarArchivos()
+        {
+            CargarVector();
+            OrdenarVector();
+            ReescribirArchivo();
+        }
+
+
         public void Grabar(string cod, string nom, string deu, string lim)
         {
             //Abrir 
@@ -136,7 +197,6 @@ namespace pryRegistros_v2
             return Total / C;
         }
        
-     
 
         public void ListarDeudores(DataGridView Grilla)
         {
