@@ -38,5 +38,17 @@ namespace pryRegistros_v2
             formulario.MdiParent = this;
             formulario.Show();
         }
+
+        private void salirToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void aCercaDeToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Proyecto realizado por: \n\n Simona Baldovino", "Acerca de", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        
     }
 }
