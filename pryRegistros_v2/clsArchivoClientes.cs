@@ -215,7 +215,6 @@ namespace pryRegistros_v2
                 {
                     Grilla.Rows.Add(VectorDatos[0], VectorDatos[1], VectorDatos[2], VectorDatos[3]);
                     C++;
-
                 }
                 
                 DatosLeidos = AD.ReadLine();
@@ -235,10 +234,5 @@ namespace pryRegistros_v2
 
             return Promedio;
         }
-
-
-
-
-
     }
 }
