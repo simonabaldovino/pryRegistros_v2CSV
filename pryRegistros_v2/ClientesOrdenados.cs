@@ -16,5 +16,34 @@ namespace pryRegistros_v2
         {
             InitializeComponent();
         }
+
+        clsArchivoClientes x = new clsArchivoClientes();
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            // validacion q se haya seleccionado algo 
+
+            if (cboCampo.Text != "")
+            {
+                if (cboModo.Text != "")
+                {
+                    x.CargarDesdeArchivo(); 
+                    x.OrdenarClientes(cboCampo.Text, cboModo.Text);
+
+                    dgvClientes.Rows.Clear();
+
+                    for (int i = 0; i < x.CantidadClientes; i++)
+                    {
+                        dgvClientes.Rows.Add(
+                            x.VectorClientes[i].Codigo,
+                            x.VectorClientes[i].Nombre,
+                            x.VectorClientes[i].Deuda,
+                            x.VectorClientes[i].Limite
+                        );
+                    }
+                }
+            }
+        }
+
     }
 }

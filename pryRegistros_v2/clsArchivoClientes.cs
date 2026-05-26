@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml.Schema;
+using System.Drawing;
 
 namespace pryRegistros_v2
 {
@@ -14,6 +15,18 @@ namespace pryRegistros_v2
         public string NombreArchivo = "Clientes.csv";
         Decimal Total = 0;
         Int32 C = 0;
+
+        public RegCliente[] VectorClientes = new RegCliente[5];
+
+        public Int32 CantidadClientes = 0;
+
+        public struct RegCliente
+        {
+            public Int32 Codigo;
+            public String Nombre;
+            public Decimal Deuda;
+            public Decimal Limite;
+        }
 
         public void Grabar(string cod, string nom, string deu, string lim)
         {
@@ -59,10 +72,9 @@ namespace pryRegistros_v2
             AD.Dispose();
         }
 
-        public Int32 CantidadClientes()
+        public Int32 CantidadClient()
         {
             string DatosLeidos;
-
 
             //abrir
             StreamReader AD = new StreamReader(NombreArchivo);
@@ -135,9 +147,7 @@ namespace pryRegistros_v2
 
             return Total / C;
         }
-       
-     
-
+   
         public void ListarDeudores(DataGridView Grilla)
         {
             string DatosLeidos;
@@ -226,13 +236,112 @@ namespace pryRegistros_v2
 
             return C;
         }
-
         public Decimal PromedioDeuda2()
         {
             Decimal Promedio = 0;
             Promedio = Total / C;
 
             return Promedio;
+        }
+
+        public void CargarDesdeArchivo()
+        {
+            if (File.Exists(NombreArchivo) == true)
+            {
+                StreamReader SR = new StreamReader(NombreArchivo);
+                CantidadClientes = 0;
+
+                String linea = SR.ReadLine();
+                while (linea != null)
+                {
+                    if (CantidadClientes < 100)
+                    {
+                        String[] vec = linea.Split(';');
+
+                        VectorClientes[CantidadClientes].Codigo = Convert.ToInt32(vec[0]);
+                        VectorClientes[CantidadClientes].Nombre = vec[1];
+                        VectorClientes[CantidadClientes].Deuda = Convert.ToDecimal(vec[2]);
+                        VectorClientes[CantidadClientes].Limite = Convert.ToDecimal(vec[3]);
+
+                        CantidadClientes++;
+                    }
+                    linea = SR.ReadLine();
+                }
+                SR.Close();
+                SR.Dispose(); 
+            }
+        }
+        public void OrdenarClientes(String Campo, String Modo)
+        {
+            for (int i = 0; i < CantidadClientes - 1; i++)
+            {
+                for (int j = 0; j < CantidadClientes - 1; j++)
+                {
+                    bool debeIntercambiar = false;
+
+                    if (Campo == "Código")
+                    {
+                        if (Modo == "Ascendente")
+                        {
+                            if (VectorClientes[j].Codigo > VectorClientes[j + 1].Codigo)
+                            { debeIntercambiar = true; }
+                        }
+                        if (Modo == "Descendente")
+                        {
+                            if (VectorClientes[j].Codigo < VectorClientes[j + 1].Codigo)
+                            { debeIntercambiar = true; }
+                        }
+                    }
+                    
+                    if (Campo == "Nombre y Apellido")
+                    {
+                        if (Modo == "Ascendente")
+                        {
+                            if (string.Compare(VectorClientes[j].Nombre, VectorClientes[j + 1].Nombre) > 0)
+                            { debeIntercambiar = true; }
+                        }
+                        if (Modo == "Descendente")
+                        {
+                            if (string.Compare(VectorClientes[j].Nombre, VectorClientes[j + 1].Nombre) < 0)
+                            { debeIntercambiar = true; }
+                        }
+                    }
+
+                    if (Campo == "Deuda")
+                    {
+                        if (Modo == "Ascendente")
+                        {
+                            if (VectorClientes[j].Deuda > VectorClientes[j + 1].Deuda)
+                            { debeIntercambiar = true; }
+                        }
+                        if (Modo == "Descendente")
+                        {
+                            if (VectorClientes[j].Deuda < VectorClientes[j + 1].Deuda)
+                            { debeIntercambiar = true; }
+                        }
+                    }
+                    if (Campo == "Límite de crédito")
+                    {
+                        if (Modo == "Ascendente")
+                        {
+                            if (VectorClientes[j].Limite > VectorClientes[j + 1].Limite)
+                            { debeIntercambiar = true; }
+                        }
+                        if (Modo == "Descendente")
+                        {
+                            if (VectorClientes[j].Limite < VectorClientes[j + 1].Limite)
+                            { debeIntercambiar = true; }
+                        }
+                    }
+
+                    if (debeIntercambiar == true)
+                    {
+                        RegCliente aux = VectorClientes[j];
+                        VectorClientes[j] = VectorClientes[j + 1];
+                        VectorClientes[j + 1] = aux;
+                    }
+                }
+            }
         }
     }
 }

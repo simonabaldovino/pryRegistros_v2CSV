@@ -38,5 +38,22 @@ namespace pryRegistros_v2
             formulario.MdiParent = this;
             formulario.Show();
         }
+
+        private void listadoDeClientesOrdenadosPorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new ClientesOrdenados();
+            formulario.MdiParent = this;
+            formulario.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void aCercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Creado por Simona Baldovino", "Acerca de");
+        }
     }
 }

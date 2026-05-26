@@ -21,7 +21,7 @@ namespace pryRegistros_v2
         private void frmListadoClientes_Load(object sender, EventArgs e)
         {
             x.Listar(dgvConsultaDatos);
-            lblCantClientes.Text = x.CantidadClientes().ToString();
+            lblCantClientes.Text = x.CantidadClient().ToString();
             lblTotDeuda.Text = x.DeudaClientes().ToString();
             lblPromDeuda.Text = x.PromedioDeuda().ToString();
         }
